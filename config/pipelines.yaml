@@ -9,17 +9,17 @@ pipelines:
 #      extractor_params:
 #        sample_size: 1000
 
-#  - name: data_cleanup
-#    type: pipelines.data_cleanup_pipeline.DataCleanupPipeline
-#    params:
-#      # cleanup_steps is a list of preprocessors (built via PreprocessorFactory)
-#      cleanup_steps:
-#        - name: remove_duplicates
-#          params:
-#            field: "AppID"
-#            keep: "first"
-#            case_sensitive: false
-#            dropna: true
+  - name: data_cleanup
+    type: pipelines.data_cleanup_pipeline.DataCleanupPipeline
+    params:
+      # cleanup_steps is a list of preprocessors (built via PreprocessorFactory)
+      cleanup_steps:
+        - name: remove_duplicates
+          params:
+            field: "AppID"
+            keep: "first"
+            case_sensitive: false
+            dropna: true
 
 
   - name: filter_features
